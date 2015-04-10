@@ -1,0 +1,5 @@
+AlarmController = AppController.extend({
+  data: {
+    
+  }
+});

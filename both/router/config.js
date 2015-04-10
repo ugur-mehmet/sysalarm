@@ -1,6 +1,7 @@
 Router.configure({
   controller: 'AppController',
-  loadingTemplate: 'loading'
+  loadingTemplate: 'loading',
+  notFoundTemplate: 'notFound'
 });
 
 // Router.plugin('loading', {loadingTemplate: 'loading'});
