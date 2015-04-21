@@ -11,6 +11,7 @@ Meteor.startup(function () {
         doc.alarm_id = id;
         localAlarms.insert(doc);
         //Logs.insert(doc);
+        console.log("added " + id);
       }
     },
     changed: function(id, doc){
@@ -23,7 +24,8 @@ Meteor.startup(function () {
         logalarm.alarm_id = id;
         if(localalarm) {
           localAlarms.update(localalarm._id, {$set: doc});
-          Logs.insert(logalarm);
+          //Logs.insert(logalarm);
+          console.log("changed CLR " + id);
 
         }
 
@@ -34,7 +36,8 @@ Meteor.startup(function () {
         delete newdoc._id;
         newdoc.alarm_id = id;
         localAlarms.insert(newdoc);
-        Logs.insert(newdoc);
+        //Logs.insert(newdoc);
+        console.log("changed ADD " + id);
       }
 
 

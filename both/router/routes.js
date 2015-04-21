@@ -1,12 +1,12 @@
-Router.route('/', {
-  name: 'home'
-});
+// Router.route('/', {
+//   name: 'home'
+// });
 
 Router.route('/dashboard', {
   name: 'dashboard'
 });
 
-Router.route('/alarms', {
+Router.route('/', {
   name: 'alarms',
   controller: 'AlarmController'
 });
@@ -20,5 +20,5 @@ Router.route('/logs', {
 });
 
 Router.plugin('ensureSignedIn', {
-  only: ['config','dashboard']
+  only: ['home', 'alarms', 'config','dashboard', 'logs']
 });
