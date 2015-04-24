@@ -3,7 +3,16 @@
 // });
 
 Router.route('/dashboard', {
-  name: 'dashboard'
+  name: 'dashboard',
+  onBeforeAction: function(){
+    if (Roles.userIsInRole(Meteor.userId(), ['admin'])){
+        this.next();
+    }
+    else {
+      //this.redirect('/');
+      this.render('notFound');
+    }
+  }
 });
 
 Router.route('/', {
@@ -12,7 +21,17 @@ Router.route('/', {
 });
 
 Router.route('/config', {
-  name: 'config'
+  name: 'config',
+  onBeforeAction: function(){
+    if (Roles.userIsInRole(Meteor.userId(), ['admin'])){
+        this.next();
+    }
+    else {
+      //this.redirect('/');
+      this.render('notFound');
+    }
+  }
+
 });
 
 Router.route('/logs', {
