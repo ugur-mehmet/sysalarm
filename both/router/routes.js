@@ -35,7 +35,8 @@ Router.route('/config', {
 });
 
 Router.route('/logs', {
-  name: 'logs'
+  name: 'logsTable',
+  controller: 'LogsController'
 });
 
 Router.plugin('ensureSignedIn', {

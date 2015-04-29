@@ -27,6 +27,27 @@ if (Meteor.users.find().fetch().length === 0) {
 
     });
   }
+var log_date= new Date();
+var log_date_2 = log_date.setHours(log_date.getHours()+1);
+var dataAlarms = [
+  {text: 'Jenerator-2 Calisiyor',place: 'Seddulbahir',status: 'ADD',mod_date: log_date},
+  {text: 'Jenerator-2 Calisiyor',place: 'Seddulbahir',status: 'CLR',mod_date: log_date_2},
+  {text: 'Elektrik kesintisi var',place: 'Seddulbahir',status: 'ADD',mod_date: log_date},
+  {text: 'Elektrik kesintisi var',place: 'Seddulbahir',status: 'CLR',mod_date: log_date_2},
+  {text: 'Jenerator-1 Calisiyor',place: 'Seddulbahir',status: 'ADD',mod_date: log_date},
+  {text: 'Jenerator-1 Calisiyor',place: 'Seddulbahir',status: 'CLR',mod_date: log_date_2},
+  {text: 'Giris Kapisi Acik',place: 'Seddulbahir',status: 'ADD',mod_date: log_date},
+  {text: 'Giris Kapisi Acik',place: 'Seddulbahir',status: 'CLR',mod_date: log_date_2},
+  {text: 'Jenerator-1 Arizali',place: 'Seddulbahir',status: 'ADD',mod_date: log_date},
+  {text: 'Jenerator-1 Arizali',place: 'Seddulbahir',status: 'CLR',mod_date: log_date_2},
+  {text: 'Jenerator-2 Arizali',place: 'Seddulbahir',status: 'CLR',mod_date: log_date},
+  {text: 'Jenerator-2 Arizali',place: 'Seddulbahir',status: 'ADD',mod_date: log_date_2},
+
+];
+
+for(i=0; i<dataAlarms.length;i++){
+  Logs.insert(dataAlarms[i]);
+}
 
 if (Alarms.find().count()===0){
   Alarms.insert({
